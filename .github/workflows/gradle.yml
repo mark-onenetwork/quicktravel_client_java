@@ -5,6 +5,7 @@ on:
     branches:
       - '**'
   pull_request:
+    types: [closed]
     branches:
       - main
 
@@ -35,7 +36,7 @@ jobs:
       run: ./gradlew jacocoTestReport coveralls
 
     - name: Publish to GitHub Packages
-      if: github.event.pull_request.merged == true
+      if: ${{ github.event.pull_request.merged == true }}
       run: ./gradlew publish
       env:
         GITHUB_USERNAME: ${{ github.actor }}
