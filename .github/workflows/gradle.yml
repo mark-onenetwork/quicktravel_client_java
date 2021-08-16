@@ -4,10 +4,10 @@ on:
   push:
     branches:
       - '**'
-  pull_request:
-    types: [closed]
-    branches:
-      - main
+  # pull_request:
+  #   types: [closed]
+    # branches:
+    #   - master
 
 jobs:
   build:
@@ -36,7 +36,7 @@ jobs:
       run: ./gradlew jacocoTestReport coveralls
 
     - name: Publish to GitHub Packages
-      if: ${{ github.event.pull_request.merged == true }}
+      if: github.ref == 'refs/heads/master'
       run: ./gradlew publish
       env:
         GITHUB_USERNAME: ${{ github.actor }}
