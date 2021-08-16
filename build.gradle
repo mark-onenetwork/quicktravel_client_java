@@ -44,6 +44,7 @@ checkstyle {
 
 
 repositories {
+    google()
     mavenCentral()
     jcenter()
 }
@@ -52,7 +53,7 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.8.6'
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'io.reactivex.rxjava2:rxjava:2.2.20'
-    implementation 'net.danlew:android.joda:2.10.9'
+    implementation 'net.danlew:android.joda:2.10.7.1'
     testCompile 'joda-time:joda-time:2.10.9'
     testCompile 'junit:junit:4.13.1'
     testCompile 'com.squareup.okhttp3:mockwebserver:4.9.0'
@@ -107,27 +108,16 @@ publishing {
             }
         }
     }
-}
-
-bintray {
-    user = System.getenv('BINTRAY_USER')
-    key = System.getenv('BINTRAY_KEY')
-
-    publications = ['mavenPublication']
-
-    pkg {
-        repo = 'maven'
-        name = 'quicktravel_client'
-        userOrg = 'sealink'
-        licenses = ['MIT']
-        vcsUrl = "https://github.com/sealink/quicktravel_client_java.git"
-        version {
-            name = project.version
-            desc = project.version
-            released  = new Date()
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = "https://maven.pkg.github.com/mark-onenetwork/quicktravel_client_java"
+            credentials {
+                username = System.getenv("GITHUB_USERNAME")
+                password = System.getenv("GITHUB_TOKEN")
+            }
         }
     }
-    publish = true
 }
 
 task createProperties(dependsOn: processResources) {
