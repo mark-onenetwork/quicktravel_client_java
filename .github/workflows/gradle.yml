@@ -2,6 +2,9 @@ name: Gradle Package
 
 # on: [push]
 on:
+  push:
+    branches:
+      - '**'
   release:
     types: [created]
 
@@ -21,6 +24,10 @@ jobs:
         distribution: 'adopt'
         server-id: github
         settings-path: ${{ github.workspace }}
+
+    - name: Print ref
+      run: |
+        echo "${{ github.ref }}"
 
     - name: Display bradle version
       run: ./gradlew versionDisplay
