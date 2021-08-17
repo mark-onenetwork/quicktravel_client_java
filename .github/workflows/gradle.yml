@@ -1,6 +1,9 @@
 name: Gradle Package
 
-on: [push]
+# on: [push]
+on:
+  release:
+    types: [released]
 
 jobs:
   build:
