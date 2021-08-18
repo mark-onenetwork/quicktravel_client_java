@@ -84,3 +84,4 @@ with
 Resync the gradle process.
 
 The quicktravel_client project should now be a direct dependency and any changes made should be immediately effective, if not you may be required to restart Android Studio.
+
