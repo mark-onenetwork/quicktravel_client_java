@@ -1,6 +1,6 @@
-[ ![Download](https://img.shields.io/github/v/release/sealink/quicktravel_client_java) ](https://github.com/sealink/quicktravel_client_java/packages/945137)
+[ ![Download](https://img.shields.io/github/v/release/mark-onenetwork/quicktravel_client_java) ](https://github.com/mark-onenetwork/quicktravel_client_java/packages/941974)
 [![Coverage Status](https://coveralls.io/repos/github/sealink/quicktravel_client_java/badge.svg?branch=master)](https://coveralls.io/github/sealink/quicktravel_client_java?branch=master)
-[![Build Status](https://github.com/sealink/quicktravel_client_java/actions/workflows/gradle.yml/badge.svg?branch=master)](https://github.com/sealink/quicktravel_client_java/actions)
+[![Build Status](https://github.com/mark-onenetwork/quicktravel_client_java/actions/workflows/gradle.yml/badge.svg?branch=master)](https://github.com/mark-onenetwork/quicktravel_client_java/actions)
 
 QuickTravel API library is a common use library developed primarily for use in the SeaLink Android
 application suite, including Ticketing, Companion and Albert.
